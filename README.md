@@ -4,14 +4,28 @@ HBSCM 将 Ma 等人（2026）的马蹄先验贝叶斯合成控制方法封装为
 
 ## 安装
 
-在本项目的 Windows x64、R 4.5.x 环境中，运行交付目录里的安装脚本。脚本会安装同目录的 `pblasso_1.0.8.zip` 和 `HBSCM_0.1.0.zip`。首次使用时，若缺少 Rcpp、rlang 或 ggplot2，脚本会从 CRAN 安装这些常规依赖。
+首次使用时，在 R 或 RStudio 中运行整段代码。它会从 GitHub 下载 v0.1.0，并按顺序安装模型依赖 `pblasso 1.0.8` 和 `HBSCM 0.1.0`。
 
 ```r
-source("D:/codex/bayes/output/HBSCM/install.R", encoding = "UTF-8")
+local({
+  url <- "https://github.com/sun2901831024-cloud/HBSCM/releases/download/v0.1.0/HBSCM-0.1.0-release.zip"
+  archive <- tempfile(fileext = ".zip")
+  folder <- tempfile("HBSCM-")
+  dir.create(folder)
+  download.file(url, archive, mode = "wb")
+  unzip(archive, exdir = folder)
+  source(file.path(folder, "HBSCM", "install.R"), local = TRUE, encoding = "UTF-8")
+})
 library(HBSCM)
 ```
 
-若移动文件，将路径改为安装脚本的新位置，并把两份安装包与脚本放在同一目录。其他 R 版本或系统可使用同目录下的两份源码包；安装脚本会选择源码安装，需要与 R 匹配的 C++17、BLAS、LAPACK 和 Fortran 工具链，以及 RcppArmadillo。上游 `pblasso` 来自 Pang、Liu 和 Xu 的官方复现档案，源码文件的 SHA256 为 `355571369c3247eb5d5f9365b9ae54376a0960ee6819d44c09e46631ef8f2043`。[原始依赖来源](https://doi.org/10.7910/DVN/B6SWA1)
+以后打开 R，只需运行：
+
+```r
+library(HBSCM)
+```
+
+Windows x64 配合 R 4.5.x 时使用预编译包。其他支持的 R 版本（R ≥ 4.1）和平台使用源码安装，需要与 R 匹配的 C++17、BLAS、LAPACK 和 Fortran 工具链。安装脚本会从 CRAN 补齐常规 R 依赖；指定版本的 `pblasso` 已随发布包提供。[原始依赖来源](https://doi.org/10.7910/DVN/B6SWA1)
 
 ## 从模拟面板估计 ATT
 
