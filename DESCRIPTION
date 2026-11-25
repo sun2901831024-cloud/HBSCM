@@ -1,0 +1,16 @@
+Package: HBSCM
+Type: Package
+Title: Bayesian Synthetic Control with Horseshoe Priors
+Version: 0.1.0
+Authors@R: person("Xiaohua", "Ma", email = "mxh051218@163.com",
+    role = c("aut", "cre"))
+Description: Fits the panel interactive effects model of Ma et al. (2026)
+    <doi:10.1016/j.econmod.2026.107502> using horseshoe shrinkage.
+    Includes a grouped extension, an adaptive lasso comparator, a staggered
+    adoption simulator and posterior predictive treatment effect summaries.
+License: file LICENSE
+Encoding: UTF-8
+Depends: R (>= 4.1.0)
+Imports: pblasso (== 1.0.8), ggplot2 (>= 3.4.0), Rcpp, rlang, stats
+LinkingTo: Rcpp, RcppArmadillo
+SystemRequirements: C++17

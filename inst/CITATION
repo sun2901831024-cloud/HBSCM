@@ -1,0 +1,9 @@
+bibentry(
+  bibtype = "Article",
+  title = "A Bayesian synthetic control method via horseshoe priors",
+  author = c(person("Xiaohua", "Ma"), person("Qibing", "Gao"),
+             person("Jun", "Wang"), person("Mingquan", "Wang"),
+             person("Chunhua", "Zhu")),
+  journal = "Economic Modelling", year = "2026", volume = "157",
+  pages = "107502", doi = "10.1016/j.econmod.2026.107502"
+)

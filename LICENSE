@@ -1,0 +1,9 @@
+Local research package assembled from the supplied H-BSCM materials.
+The published H-BSCM replication deposit by Xiaohua Ma is licensed under
+CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).
+Source: https://doi.org/10.17632/4vx9dcbpvm.1
+Modifications include package interfaces, validation, summaries and examples.
+Additional local scripts and empirical datasets retain their original
+terms; no additional redistribution rights are asserted for those files.
+pblasso is a separate dependency distributed by Pang, Liu and Xu in
+https://doi.org/10.7910/DVN/B6SWA1.
