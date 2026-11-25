@@ -4,11 +4,11 @@ HBSCM 将 Ma 等人（2026）的马蹄先验贝叶斯合成控制方法封装为
 
 ## 安装
 
-首次使用时，在 R 或 RStudio 中运行整段代码。它会从 GitHub 下载 v0.1.0，并按顺序安装模型依赖 `pblasso 1.0.8` 和 `HBSCM 0.1.0`。
+首次使用时，在 R 或 RStudio 中运行整段代码。它会从 GitHub 下载 v0.1.1，并按顺序安装模型依赖 `pblasso 1.0.8` 和 `HBSCM 0.1.1`。
 
 ```r
 local({
-  url <- "https://github.com/sun2901831024-cloud/HBSCM/releases/download/v0.1.0/HBSCM-0.1.0-release.zip"
+  url <- "https://github.com/sun2901831024-cloud/HBSCM/releases/download/v0.1.1/HBSCM-0.1.1-release.zip"
   archive <- tempfile(fileext = ".zip")
   folder <- tempfile("HBSCM-")
   dir.create(folder)
@@ -61,19 +61,17 @@ effPlot(effects, "eff")
 
 ```r
 source(system.file("examples", "smoking.R", package = "HBSCM"))
-source(system.file("examples", "so2.R", package = "HBSCM"))
 ```
 
-第一个示例用州名识别加州，把 1989 年设为首个处理年。第二个示例按原材料 `a1.R` 的口径读取 GBK 文件，以 `wso2` 为结局、`d2007` 为处理变量，并使用原脚本的八个协变量。两份示例都缩短了迭代次数。
+加州控烟示例用州名识别加州，以 1989 年为首个处理年，并用短链演示拟合流程。
 
 | 包内原始文件 | 内容与读取方式 |
 | --- | --- |
 | `smoking.csv` | 加州控烟案例，使用 `read.csv()`。 |
-| `data.csv` | 二氧化硫面板，使用 `read.csv(..., fileEncoding = "GBK")`。 |
 | `repgermany.dta` | 德国统一案例，可用 `haven::read_dta()`。 |
 | `data_main.RData` | 亚投行案例，包含数据框 `df.main`；可用 `load(path, envir = new.env())` 载入独立环境。 |
 
-用 `system.file("extdata", "文件名", package = "HBSCM")` 获得完整路径。原材料中的 `s1.R`、`e1.R` 至 `e9.R` 和 `a1.R` 至 `a4.R` 是论文作图、对照试验和实证分析脚本，其中一些会启动并行任务。包提供模型接口与上述两个可直接运行的实证示例。
+用 `system.file("extdata", "文件名", package = "HBSCM")` 获得包内数据的完整路径。
 
 ## 与原脚本的对应关系
 
