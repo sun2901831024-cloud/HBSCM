@@ -1,7 +1,7 @@
 Package: HBSCM
 Type: Package
 Title: Bayesian Synthetic Control with Horseshoe Priors
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: person("Xiaohua", "Ma", email = "mxh051218@163.com",
     role = c("aut", "cre"))
 Description: Fits the panel interactive effects model of Ma et al. (2026)
